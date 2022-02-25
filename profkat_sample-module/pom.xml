@@ -32,6 +32,51 @@
     </resources>
     <plugins>
       <plugin>
+        <!-- https://maven.apache.org/plugins/maven-dependency-plugin/examples/unpacking-artifacts.html -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <failOnWarning>false</failOnWarning>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.webjars</groupId>
+                  <artifactId>bootstrap</artifactId>
+                  <version>4.6.1</version>
+                  <overWrite>true</overWrite>
+                  <outputDirectory>${project.build.directory}/scss-dependency-sources</outputDirectory>
+                  <includes>**/*.scss</includes>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <!-- https://github.com/cleydyr/dart-sass-maven-plugin -->
+        <groupId>io.github.cleydyr</groupId>
+        <artifactId>dart-sass-maven-plugin</artifactId>
+        <version>0.1.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile-sass</goal>
+            </goals>
+            <configuration>
+              <inputFolder>${project.build.outputDirectory}/META-INF/resources/scss</inputFolder>
+              <outputFolder>${project.build.outputDirectory}/META-INF/resources/css/</outputFolder>
+              <loadPaths>${project.build.directory}/scss-dependency-sources/META-INF/resources/webjars</loadPaths>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <configuration>
