@@ -1,0 +1,23 @@
+		<title>${pageTitle} - <fmt:message key="Webpage.title" /></title>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Universitätsbibliothek Rostock" />
+
+		<meta name="mcr:baseurl" content="${WebApplicationBaseURL}" />
+		<base href="${WebApplicationBaseURL}" />
+
+		<link type="image/x-icon" rel="shortcut icon" href="${pageContext.request.contextPath}/themes/cpr/images/cpr.ico" />
+		<c:if test="${not empty param.id}">
+			<link rel="canonical" href="${WebApplicationBaseURL}resolve/id/${param.id}" />
+		</c:if>
+		
+		<mcr:webjarLocator htmlElement="script" project="jquery" file="jquery.min.js" />
+    	<mcr:webjarLocator htmlElement="stylesheet" project="font-awesome" file="all.min.css" />
+		
+		<script src="${pageContext.request.contextPath}/themes/cpr/js/cookie.js"></script>
+		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-profkat_sample.css" />
+        <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/profkat.css" />
+        
+        <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/profkat_sample.css" />
+    

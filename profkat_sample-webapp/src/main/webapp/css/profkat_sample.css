@@ -1,0 +1,19 @@
+.ir-nav-top .navbar{
+	padding:0;
+}
+
+.ir-nav-top a{
+	color:white;
+}
+
+.ir-footer{
+	color: white;
+	margin-top:3em;
+}
+.ir-footer a{
+	color:white;
+}
+.ir-footer ul {
+    list-style: none;
+    padding-inline-start: 0;
+}

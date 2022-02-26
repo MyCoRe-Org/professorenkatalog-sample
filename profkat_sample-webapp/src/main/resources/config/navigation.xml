@@ -1,58 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <navigations xmlns="http://www.mycore.org/jspdocportal/navigation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mycore.org/jspdocportal/navigation navigation.xsd">
-  
-  <navigation id="left">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.mycore.org/jspdocportal/navigation navigation.xsd">
+
+  <navigation id="main">
     <navitem id="start" i18n="Nav.Start" href="" />
     <navitem id="indexbrowser_profname" i18n="Nav.Profkat.Index" href="do/indexbrowser/profname" />
-		
+    <navitem id="search" i18n="Nav.Profkat.Search" href="do/search/profkat-bar" />
+    <navitem id="ueber_uns" i18n="Nav.Profkat.AboutUs" href="site/ueber_uns?info=info.team,info.kontakt" />
+  </navigation>
 
-		<navitem id="epochen" i18n="Nav.Profkat.Epochs" href="site/epochen">
-		</navitem>
-		<navitem id="search" i18n="Nav.Profkat.Search" href="do/search/profkat-bar">
-			<navitem id="simple" i18n="Nav.Profkat.Search.Simple" href="do/search/profkat-simple" />
-			<navitem id="extended" i18n="Nav.Profkat.Search.Extended"
-				href="do/search/profkat-extended" />
+  <navigation id="top">
+    <navitem id="start" i18n="Nav.Start" href="" />
+    <navitem id="login" i18n="Nav.Login" href="do/login" hidden="true" />
+    <navitem id="logout" i18n="Nav.Logout" href="do/login?logout=true" hidden="true" />
+    <navitem id="impressum" i18n="Nav.Impressum" href="site/impressum" hidden="true" />
+  </navigation>
 
-			<navitem id="subject_prof" i18n="Nav.Profkat.Search.Subject"
-				href="do/classbrowser/subject" />
-
-			<navitem id="institution" i18n="Nav.Profkat.Search.Institution"
-				href="do/classbrowser/institution" />
-			<!-- 
-			<navitem id="epoch" i18n="Nav.Profkat.Search.Epochs" href="classbrowser/epoch" />
-			-->
-		</navitem>
-		 <navitem id="ueber_uns" i18n="Nav.Profkat.AboutUs" href="site/ueber_uns?info=info.team,info.kontakt">
-		</navitem>
-	</navigation>
-
-	<navigation id="top">
-		<navitem id="start" i18n="Nav.Start" href="">
-			<refitem id="~index" />
-		</navitem>
-		<navitem id="impressum" i18n="Nav.Impressum" href="site/impressum" hidden="true">
-			<refitem id="~impressum" />
-		</navitem>
-		<navitem id="login" i18n="Nav.Login" href="do/login" hidden="true" />
-		<navitem id="logout" i18n="Nav.Logout" href="do/login?logout=true" hidden="true" />
-	</navigation>
-	
   <navigation id="search">
-		<navitem id="search" i18n="Nav.Profkat.Search" href="do/search/profkat-bar">
-			<navitem id="simple" i18n="Nav.Profkat.Search.Simple" href="do/search/profkat-simple" />
-			<navitem id="extended" i18n="Nav.Profkat.Search.Extended"
-				href="do/search/profkat-extended" />
-
-			<navitem id="subject_prof" i18n="Nav.Profkat.Search.Subject"
-				href="do/classbrowser/subject" />
-
-			<navitem id="institution" i18n="Nav.Profkat.Search.Institution"
-				href="do/classbrowser/institution" />
-			<!-- 
-			<navitem id="epoch" i18n="Nav.Profkat.Search.Epochs" href="classbrowser/epoch" />
-			-->
-		</navitem>
-	</navigation>
+    <navitem id="search" i18n="Nav.Profkat.Search" href="do/search/profkat-bar">
+      <navitem id="simple" i18n="Nav.Profkat.Search.Simple" href="do/search/profkat-simple" />
+      <navitem id="extended" i18n="Nav.Profkat.Search.Extended" href="do/search/profkat-extended" />
+      <navitem id="subject_prof" i18n="Nav.Profkat.Search.Subject" href="do/classbrowser/subject" />
+      <navitem id="institution" i18n="Nav.Profkat.Search.Institution" href="do/classbrowser/institution" />
+    </navitem>
+  </navigation>
 </navigations>

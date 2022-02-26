@@ -112,8 +112,9 @@
       <artifactId>jakarta.servlet-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>org.mycore.professorenkatalog</groupId>
+      <artifactId>profkat-base-module</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <!-- replace this with the settings of the JDBC driver for your database -->
     <dependency>

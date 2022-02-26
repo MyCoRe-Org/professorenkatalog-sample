@@ -1,0 +1,62 @@
+<div class="container-fluid ir-footer bg-dark">
+  <div class="container">
+    <div class="row pt-3">
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="float-left mr-4" style="font-size:5em">
+          <i class="fas fa-university"></i>
+        </div>
+        <div class="mt-4">
+          <a href="${WebApplicationBaseURL}" style="font-size:1.50em;line-height:110%">Beispiel<br />Professoren<br/>Katalog</a>
+          </div>  
+      </div>
+      
+      <div class="col-md-3 col-sm-6 col-12">
+        <h5>Kontakt</h5>
+        <p>
+         <strong>Beispieluniversität</strong>
+        </p>
+        <p style="text-indent:-.75em;margin-left:1.75em"><i class="far fa-envelope text-white"></i>
+           <a  href="mailto:professorenkatalog@beispieluniversitaet.de">
+              professorenkatalog(at)<br />beispieluniversitaet.de
+           </a>
+        </p>
+      </div>
+        
+      <div class="col-md-3 col-sm-6 col-12">
+        <h5>Service</h5>
+        <ul>
+          <li>
+            <a  href="${WebApplicationBaseURL}site/service/impressum" title="Impressum">Impressum</a>
+          </li>
+          <li>
+            <a href="${WebApplicationBaseURL}site/service/datenschutz" title="Datenschutzerklärung">Datenschutzerklärung</a>
+          </li>
+          <li>
+            <a  href="${WebApplicationBaseURL}site/service/barrierefreiheit" title="Barrierefreiheit">Barrierefreiheit</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-sm-6 col-12">
+        <h5>MyCoRe</h5>
+        <ul>
+          <li>
+            <a href="http://www.mycore.org" title="MyCoRe Homepage">Homepage</a>
+          </li>
+          <li>
+            <a href="https://github.com/MyCoRe-Org" title="MyCoRe GitHub Repository"><i class="fab fa-github"></i> GitHub</a>
+          </li>
+        </ul>
+        <p style="margin-top:15px">
+          <img src="${WebApplicationBaseURL}/images/mycore_logo_powered_175x55_frei.png" title="powered by MyCoRe" 
+          style=background-color:white;width:120px;padding:5px/>
+        </p>
+      </div>
+    </div>
+    <div class="row" style="border-top:1px solid white;">
+      <div class="col-12">
+        <div class="ir-footer-copyright py-2">© 2022 Forschungsstelle Professorenkatalog an der Beispieluniversität</div>
+      </div>
+    </div>
+  </div>
+</div>
+<mcr:webjarLocator htmlElement="script" project="bootstrap" file="bootstrap.bundle.min.js" />
