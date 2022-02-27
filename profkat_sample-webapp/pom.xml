@@ -21,6 +21,55 @@
     <finalName>profkat_sample-${project.version}</finalName>
     <plugins>
       <plugin>
+        <!-- https://maven.apache.org/plugins/maven-dependency-plugin/examples/unpacking-artifacts.html -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <failOnWarning>false</failOnWarning>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.webjars</groupId>
+                  <artifactId>bootstrap</artifactId>
+                  <version>4.6.1</version>
+                  <overWrite>true</overWrite>
+                  <outputDirectory>${project.build.directory}/scss-dependency-sources</outputDirectory>
+                  <includes>**/*.scss</includes>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      
+      
+      <!-- https://github.com/cleydyr/dart-sass-maven-plugin -->
+   
+      <plugin>
+        <groupId>io.github.cleydyr</groupId>
+        <artifactId>dart-sass-maven-plugin</artifactId>
+        <version>0.1.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile-sass</goal>
+            </goals>
+            <configuration>
+              <inputFolder>${basedir}/src/main/scss</inputFolder>
+              <outputFolder>${project.build.directory}/${project.build.finalName}/css/</outputFolder>
+              <loadPaths>${project.build.directory}/scss-dependency-sources/META-INF/resources/webjars</loadPaths>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
         <version>${jetty.version}</version>
@@ -57,38 +106,42 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>profkat_sample-module</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.mycore</groupId>
-      <artifactId>mycore-classeditor</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.mycore</groupId>
       <artifactId>mycore-sass</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.mycore</groupId>
       <artifactId>mycore-webcli</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.mycore</groupId>
       <artifactId>mycore-webtools</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>bootstrap</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>font-awesome</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>jquery</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>jquery-migrate</artifactId>
+      <scope>runtime</scope>
     </dependency>
   </dependencies>
 </project>
