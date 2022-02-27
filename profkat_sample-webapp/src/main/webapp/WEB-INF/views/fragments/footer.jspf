@@ -1,13 +1,13 @@
-<div class="container-fluid ir-footer bg-dark">
+<div class="container-fluid ir-footer">
   <div class="container">
     <div class="row pt-3">
       <div class="col-md-4 col-sm-6 col-12">
-        <div class="float-left mr-4" style="font-size:5em">
+        <div class="float-left mr-4" style="font-size:5.25em">
           <i class="fas fa-university"></i>
         </div>
-        <div class="mt-4">
-          <a href="${WebApplicationBaseURL}" style="font-size:1.50em;line-height:110%">Beispiel<br />Professoren<br/>Katalog</a>
-          </div>  
+        <div class="mt-3 h4">
+          <a href="${WebApplicationBaseURL}" style="">Beispiel<br />Professoren<br/>Katalog</a>
+        </div>  
       </div>
       
       <div class="col-md-3 col-sm-6 col-12">

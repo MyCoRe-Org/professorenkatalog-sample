@@ -9,7 +9,7 @@
 <!doctype html>
 <html>
   <head>
-    <title><fmt:message key="Nav.Startpage" />" @ <fmt:message key="Nav.Application" /></title>
+    <title><fmt:message key="Nav.Startpage" /> @ <fmt:message key="Nav.Application" /></title>
     <link rel="canonical" href="${WebApplicationBaseURL}" />
                     
     <%@ include file="./WEB-INF/views/fragments/html_head.jspf" %>

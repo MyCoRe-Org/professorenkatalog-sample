@@ -1,13 +1,19 @@
+.ir-nav-top {
+	background-color: var(--dark);
+	color: var(--white);
+}
+
 .ir-nav-top .navbar{
 	padding:0;
 }
 
 .ir-nav-top a{
-	color:white;
+	color: var(--white);
 }
 
 .ir-footer{
-	color: white;
+	background-color: var(--dark);
+	color: var(--white);
 	margin-top:3em;
 }
 .ir-footer a{
@@ -16,4 +22,8 @@
 .ir-footer ul {
     list-style: none;
     padding-inline-start: 0;
+}
+
+.ir-footer h5 {
+	border-bottom:1px solid var(--white);
 }
