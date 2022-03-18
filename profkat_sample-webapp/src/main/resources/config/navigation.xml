@@ -7,7 +7,7 @@
     <navitem id="start" i18n="Nav.Start" href="" />
     <navitem id="indexbrowser_profname" i18n="Nav.Profkat.Index" href="do/indexbrowser/profname" />
     <navitem id="search" i18n="Nav.Profkat.Search" href="do/search/profkat-bar" />
-    <navitem id="ueber_uns" i18n="Nav.Profkat.AboutUs" href="site/ueber_uns?info=info.team,info.kontakt" />
+    <navitem id="ueber_uns" i18n="Nav.Profkat.AboutUs" href="site/ueber_uns?info=info.kontakt" />
   </navigation>
 
   <navigation id="top">
@@ -18,11 +18,11 @@
   </navigation>
 
   <navigation id="search">
-    <navitem id="search" i18n="Nav.Profkat.Search" href="do/search/profkat-bar">
-      <navitem id="simple" i18n="Nav.Profkat.Search.Simple" href="do/search/profkat-simple" />
-      <navitem id="extended" i18n="Nav.Profkat.Search.Extended" href="do/search/profkat-extended" />
-      <navitem id="subject_prof" i18n="Nav.Profkat.Search.Subject" href="do/classbrowser/subject" />
-      <navitem id="institution" i18n="Nav.Profkat.Search.Institution" href="do/classbrowser/institution" />
-    </navitem>
+      <navitem id="search_profkat-bar" i18n="Nav.Profkat.Search" href="do/search/profkat-bar">
+        <navitem id="search_profkat-simple" i18n="Nav.Profkat.Search.Simple" href="do/search/profkat-simple" />
+        <navitem id="search_profkat-extended" i18n="Nav.Profkat.Search.Extended" href="do/search/profkat-extended" />
+        <navitem id="classbrowser_subject" i18n="Nav.Profkat.Search.Subject" href="do/classbrowser/subject" />
+        <navitem id="classbrowser_institution" i18n="Nav.Profkat.Search.Institution" href="do/classbrowser/institution" />
+      </navitem>     
   </navigation>
 </navigations>
