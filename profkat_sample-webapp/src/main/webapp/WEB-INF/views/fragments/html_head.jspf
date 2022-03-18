@@ -15,7 +15,6 @@
 		<mcr:webjarLocator htmlElement="script" project="jquery" file="jquery.min.js" />
     	<mcr:webjarLocator htmlElement="stylesheet" project="font-awesome" file="all.min.css" />
 		
-		<script src="${pageContext.request.contextPath}/themes/cpr/js/cookie.js"></script>
 		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-profkat_sample.css" />
         <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/profkat.css" />
         
