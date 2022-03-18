@@ -11,6 +11,21 @@
 	color: var(--white);
 }
 
+.ir-nav-side a.active{
+  background-color: lightcyan;
+}
+
+.ir-nav-side ul.level-1 > li{
+	font-weight:bold;
+}
+.ir-nav-side ul.level-2 > li{
+	font-weight:normal;
+}
+
+.ir-nav-side ul.level-2{
+	margin-left: 30px;
+}
+
 .ir-footer{
 	background-color: var(--dark);
 	color: var(--white);
@@ -26,4 +41,7 @@
 
 .ir-footer h5 {
 	border-bottom:1px solid var(--white);
+}
+#content_area{
+	min-height: calc(100vh - 255px);
 }
