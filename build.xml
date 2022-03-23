@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =================================================================== -->
+<!-- MyCoRe sample application build file for use with Apache Ant        -->
+<!-- $Revision$ $Date$                      							 -->
+<!-- =================================================================== -->
+<project name="RosDok build" basedir=".">
+	<property name="APP_NAME" value="profkat_sample" />
+	<property environment="env" />
+
+	<condition property="CLI_HOME" value="${basedir}/${APP_NAME}-cli" else="${basedir}/${APP_NAME}-cli/target/appassembler">
+		<os family="unix" />
+	</condition>
+
+	<condition property="CONFIG_DIR" value="${CLI_HOME}/config" else="${basedir}/${APP_NAME}-cli/src/main/config">
+		<os family="unix" />
+	</condition>
+
+	<condition property="DATA_DIR" value="/data/mycore/rosdok" else="d:\mycore-dev-data\rosdok">
+		<os family="unix" />
+	</condition>
+
+	<path id="CLI_CLASSPATH">
+		<fileset dir="${CLI_HOME}/lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="init">
+	</target>
+
+	<target name="create.directories" depends="init">
+		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
+			<sysproperty key="MCR.AppName" value="${APP_NAME}" />
+			<arg value="create directory ${MCR.datadir}
+					;; create directory ${MCR.FileUpload.TempStoragePath}
+					;; create directory ${MCR.LogDirectory}
+					;; create directory ${MCR.Save.FileSystem}
+					;; create directory ${MCR.WebContent.SaveFolder}
+					;; create directory ${MCR.WorkflowEngine.DeleteDirectory}
+					;; create directory ${MCR.EHCache.diskStore.path}
+					;; create directory ${MCR.RestAPI.Upload.Directory}" />
+		</java>
+	</target>
+
+	<target name="create.users" depends="init">
+		<mkdir dir="${basedir}/target" />
+		<mkdir dir="${basedir}/target/user_encrypted" />
+		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
+			<sysproperty key="MCR.AppName" value="${APP_NAME}" />
+			<arg value="update classification from file ${CONFIG_DIR}/user/mcr-roles.xml
+	     	    ;; init superuser
+					
+				;; encrypt passwords in user xml file ${CONFIG_DIR}/user/user_editorA.xml to file ${basedir}/target/user_encrypted/user_editorA.xml
+				;; update user from file ${basedir}/target/user_encrypted/user_editorA.xml
+
+				;; encrypt passwords in user xml file ${CONFIG_DIR}/user/user_editorB.xml to file ${basedir}/target/user_encrypted/user_editorB.xml
+				;; update user from file ${basedir}/target/user_encrypted/user_editorB.xml
+				
+				;; encrypt passwords in user xml file ${CONFIG_DIR}/user/user_api.xml to file ${basedir}/target/user_encrypted/user_api.xml
+				;; update user from file ${basedir}/target/user_encrypted/user_api.xml
+				
+				;; encrypt passwords in user xml file ${CONFIG_DIR}/user/user_editorWeb.xml to file ${basedir}/target/user_encrypted/user_editorWeb.xml
+				;; update user from file ${basedir}/target/user_encrypted/user_editorWeb.xml" />
+		</java>
+	</target>
+
+	<target name="create.class" depends="init">
+		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
+			<sysproperty key="MCR.AppName" value="${APP_NAME}" />
+			<arg value="update all classifications from directory ${CONFIG_DIR}/classification" />
+		</java>
+		<!--
+			<taskdef name="mcr-execute" classname="org.mycore.buildtools.anttasks.MCRExecuteCommandTask" classpathref="APP_CLASSPATH" />
+			<mcr-execute>
+		           update all classifications from directory ${CONFIG_DIR}/classification
+			</mcr-execute>
+		-->
+	</target>
+
+	<target name="deploy.workflows">
+		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
+			<sysproperty key="MCR.AppName" value="${APP_NAME}" />
+			<arg value="deploy workflow processdefinition from resource config/workflow/processdefinitions/create_object_simple.bpmn20.xml" />
+		</java>
+	</target>
+
+	<target name="update.solr.config">
+		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
+			<sysproperty key="MCR.AppName" value="${APP_NAME}" />
+			<arg value="reload solr configuration main in core main" />
+		</java>
+	</target>
+
+	<target name="update.webcontent">
+		<delete dir="${DATA_DIR}/webcontent" failonerror="false" />
+		<mkdir dir="${DATA_DIR}/webcontent" />
+		<copy todir="${DATA_DIR}/webcontent" overwrite="true">
+			<fileset dir="${CONFIG_DIR}/webcontent" />
+		</copy>
+	</target>
+
+	<target name="create.configuration.directory">
+		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
+			<sysproperty key="MCR.AppName" value="${APP_NAME}" />
+			<arg value="create configuration directory" />
+		</java>
+	</target>
+
+	<target name="zip4deployment">
+		<zip destfile="./target/${APP_NAME}_deploy.zip">
+			<zipfileset dir="./${APP_NAME}-cli/target/appassembler" prefix="${APP_NAME}-cli" />
+			<zipfileset dir="./${APP_NAME}-cli/src/main/config" prefix="${APP_NAME}-cli/config" />
+			<zipfileset file="./${APP_NAME}-webapp/target/${APP_NAME}*.war" />
+			<zipfileset file="build.xml" />
+		</zip>
+	</target>
+
+</project>

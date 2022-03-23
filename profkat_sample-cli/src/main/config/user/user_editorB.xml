@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user name="editorB" realm="local">
+	<owner name="administrator" realm="local" />
+	<realName>Bertha Bravo</realName>
+	<eMail>professorenkatalog@beispieluniversitaet.de</eMail>
+	<roles>
+        <role name="edit" />
+		<role name="wf_edit_profkat-person" />
+	</roles>
+	<password hashType="sha1" hash="editorB" />
+</user>

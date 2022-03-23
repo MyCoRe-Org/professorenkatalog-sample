@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user name="editorA" realm="local">
+	<owner name="administrator" realm="local" />
+	<realName>Anton Alpha</realName>
+	<eMail>professorenkatalog@beispieluniversitaet.de</eMail>
+	<roles>
+        <role name="edit" />
+		<role name="wf_edit_profkat-person" />
+	</roles>
+	<password hashType="sha1" hash="editorA" />
+</user>

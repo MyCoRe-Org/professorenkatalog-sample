@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user name="editorWeb" realm="local">
+	<owner name="administrator" realm="local" />
+	<realName>Editor für WebContent im Professorenkatalog</realName>
+	<eMail>unigeschichte@uni-rostock.de</eMail>
+	<roles>
+		<role name="adminwebcontent" />
+	</roles>
+	<password hashType="sha1" hash="editorWeb" />
+</user>

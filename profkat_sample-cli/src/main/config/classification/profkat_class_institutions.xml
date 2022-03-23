@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink" xsi:noNamespaceSchemaLocation="MCRClassification.xsd"
+  ID="profkat_class_institutions">
+  <label xml:lang="de" text="Historische Gliederungseinheiten"
+    description="Historische Organisationsstruktur der Beispieluniversität" />
+  <label xml:lang="x-de-short" text="Historische Gliederungseinheiten"
+    description="Historische Organisationsstruktur" />
+  <categories>
+    <category ID="profkat_sample.0">
+      <label xml:lang="de" text="Beispieluniversität" />
+      <label xml:lang="x-de-short" text="Beispieluniversität" />
+      <category ID="profkat_sample.01">
+        <label xml:lang="de" text="Medizinische Fakultät" />
+        <label xml:lang="x-de-short" text="Medizinische Fakultät" />
+      </category>
+      <category ID="profkat_sample.02">
+        <label xml:lang="de" text="Philosophische Fakultät" />
+        <label xml:lang="x-de-short" text="Philosophische Fakultät" />
+      </category>
+      <category ID="profkat_sample.03">
+        <label xml:lang="de" text="Theologische Fakultät" />
+        <label xml:lang="x-de-short" text="Theologische Fakultät" />
+      </category>
+      <category ID="profkat_sample.04">
+        <label xml:lang="de" text="Mathematisch-Naturwissenschaftliche Fakultät" />
+        <label xml:lang="x-de-short" text="Mathematisch-Naturwissenschaftliche Fakultät" />
+        <category ID="profkat_sample.04.010">
+          <label xml:lang="de" text="Sektion Mathematik (1968-1990)" />
+          <label xml:lang="x-de-short" text="Sektion Mathematik" />
+        </category>
+        <category ID="profkat_sample.04.020">
+          <label xml:lang="de" text="Sektion Chemie (1968-1990)" />
+          <label xml:lang="x-de-short" text="Sektion Chemie" />
+        </category>
+        <category ID="profkat_sample.04.030">
+          <label xml:lang="de" text="Sektion Biologie (1968-1990)" />
+          <label xml:lang="x-de-short" text="Sektion Biologie" />
+        </category>
+        <category ID="profkat_sample.04.040">
+          <label xml:lang="de" text="Sektion Physik (1968-1990)" />
+          <label xml:lang="x-de-short" text="Sektion Physik" />
+        </category>
+      </category>
+      <category ID="profkat_sample.09">
+        <label xml:lang="de" text="Sonstige" />
+        <label xml:lang="x-de-short" text="Sonstige" />
+      </category>
+    </category>
+
+  </categories>
+</mycoreclass>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user name="api" realm="local">
+	<owner name="administrator" realm="local" />
+	<realName>Editor API</realName>
+	<eMail>professorenkatalog@beispieluniversitaet.de</eMail>
+  <!-- Used used for changes by REST-API -->
+	<roles>
+        <role name="restapi" />
+        <role name="edit" />
+	</roles>
+	<password hashType="sha1" hash="api" />
+</user>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="profkat_class_epochs">
+  <label xml:lang="de" text="Epochen" description="Epochen" />
+  <categories>
+  	<category ID="none">
+    	<label xml:lang="de" text="nicht zugewiesen" />
+    </category>
+    <category ID="profkat_sample">
+      <label xml:lang="de" text="Epochen an der Beispieluniversität" />
+      <category ID="profkat_sample.1800-1918">
+        <label xml:lang="de" text="1800-1918" description="von der Gründung bis zum Ende des Ersten Weltkrieges" />
+        <label xml:lang="x-period" text="1800TO1918" />
+      </category>
+      <category ID="profkat_sample.1918-1933">
+        <label xml:lang="de" text="1918-1933" description="Zeit der Weimarer Republik" />
+        <label xml:lang="x-period" text="1918TO1933" />
+      </category>
+      <category ID="profkat_sample.1933-1945">
+        <label xml:lang="de" text="1933-1945" description="Zeit des Dritten Reiches" />
+        <label xml:lang="x-period" text="1933TO1945" />
+       </category>
+      <category ID="profkat_sample.1945-1990">
+        <label xml:lang="de" text="1945-1990" description="DDR-Zeit" />
+        <label xml:lang="x-period" text="1945TO1990" /> 
+      </category>
+      <category ID="profkat_sample.1990-heute">
+        <label xml:lang="de" text="1990-heute" description="aktuelle Zeit" />
+         <label xml:lang="x-period" text="1990TO2999" />
+      </category>
+    </category>
+  </categories>
+</mycoreclass>

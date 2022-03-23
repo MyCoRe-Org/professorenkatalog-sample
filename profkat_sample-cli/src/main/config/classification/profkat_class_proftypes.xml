@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="MCRClassification.xsd"
+	ID="profkat_class_proftypes"> 
+	<label xml:lang="de" text="Hochschullehrerklassifikation "
+		description="Hochschullehrerklassifikation der Beispieluniversität" />
+
+	<categories>
+		<category ID="profkat_sample.PROF0001">
+			<label xml:lang="de" text="1-ordentlich" />
+			<category ID="profkat_sample.PROF0001.002">
+				<label xml:lang="de" text="(Universitäts) Professor" />
+			</category>
+			<category ID="profkat_sample.PROF0001.003">
+				<label xml:lang="de" text="Professor mit Lehrstuhl" />
+			</category>
+		</category>
+		<category ID="profkat_sample.PROF0002">
+			<label xml:lang="de" text="2-außerordentlich" />
+			<category ID="profkat_sample.PROF0002.001">
+				<label xml:lang="de" text="apl. Professor" />
+			</category>
+			<category ID="profkat_sample.PROF0002.002">
+				<label xml:lang="de" text="Professor mit (vollem) Lehrauftrag" />
+			</category>
+			<category ID="profkat_sample.PROF0002.003">
+				<label xml:lang="de" text="außerordentlicher Professor" />
+			</category>
+		</category>
+		<category ID="profkat_sample.PROF0003">
+			<label xml:lang="de" text="3-Honorarprofessor" />
+			<category ID="profkat_sample.PROF0003.001">
+				<label xml:lang="de" text="Hon.-Professor" />
+			</category>
+			<category ID="profkat_sample.PROF0003.002">
+				<label xml:lang="de" text="o. Honorarprofessor" />
+			</category>
+			<category ID="profkat_sample.PROF0003.003">
+				<label xml:lang="de" text="ao. Honorarprofessor" />
+			</category>
+			<category ID="profkat_sample.PROF0003.004">
+				<label xml:lang="de" text="Seniorprofessor" />
+			</category>
+		</category>
+
+		<category ID="profkat_sample.PROF0004">
+			<label xml:lang="de" text="4-Dozent" />
+			<category ID="profkat_sample.PROF0004.001">
+				<label xml:lang="de" text="Jun.-Professor" />
+			</category>
+			<category ID="profkat_sample.PROF0004.002">
+				<label xml:lang="de" text="Privatdozent" />
+			</category>
+			<category ID="profkat_sample.PROF0004.003">
+				<label xml:lang="de" text="Dozent" />
+			</category>
+		</category>
+
+		<category ID="profkat_sample.PROF0005">
+			<label xml:lang="de" text="5-Sonstige" />
+			<category ID="profkat_sample.PROF0005.001">
+				<label xml:lang="de" text="Sonstige" />
+			</category>
+		</category>
+
+		<category ID="profkat_sample.PROF0009">
+			<label xml:lang="de" text="9-unklar / unbekannt" />
+		</category>
+	</categories>
+</mycoreclass>
