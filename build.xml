@@ -67,7 +67,10 @@
 	<target name="create.class" depends="init">
 		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
 			<sysproperty key="MCR.AppName" value="${APP_NAME}" />
-			<arg value="update all classifications from directory ${CONFIG_DIR}/classification" />
+			<arg value="update all classifications from directory ${CONFIG_DIR}/classification
+				
+				;; update classification from uri resource:config/profkat-base/classification/derivate_types.xml
+				;; update classification from uri resource:config/profkat-base/classification/state.xml" />
 		</java>
 		<!--
 			<taskdef name="mcr-execute" classname="org.mycore.buildtools.anttasks.MCRExecuteCommandTask" classpathref="APP_CLASSPATH" />
