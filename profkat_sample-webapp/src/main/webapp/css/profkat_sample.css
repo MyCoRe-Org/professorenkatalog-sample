@@ -45,3 +45,7 @@
 #content_area{
 	min-height: calc(100vh - 255px);
 }
+
+#workspace h3{
+	color: var(--secondary);
+}
