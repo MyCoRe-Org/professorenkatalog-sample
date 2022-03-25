@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.mycore</groupId>
@@ -11,14 +12,13 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Beispiel-Professorenkatalog</name>
-  <description>The main Maven Project for Beispiel-Professorenkatalog</description>
+  <description>The main Maven project for Beispiel-Professorenkatalog</description>
   <inceptionYear>2019</inceptionYear>
   <properties>
     <changelog.since>2019-11-07</changelog.since>
     <!-- until snapshot matches released version (required for 'mvn changes:changes-check') -->
     <hibernate.version>5.2.14.Final</hibernate.version>
     <java.target.version>11</java.target.version>
-    <jetty.version>9.4.20.v20190813</jetty.version>
     <mycore.version>2021.06.1-SNAPSHOT</mycore.version>
   </properties>
   <!-- put your Git or SVN URLs here -->
@@ -47,14 +47,13 @@
               </goals>
               <configuration>
                 <rules>
-                  <requireManagedDeps implementation="org.commonjava.maven.enforcer.rule.EnforceManagedDepsRule">
+                  <requireManagedDeps
+                    implementation="org.commonjava.maven.enforcer.rule.EnforceManagedDepsRule">
                     <checkProfiles>true</checkProfiles>
                     <failOnViolation>true</failOnViolation>
                   </requireManagedDeps>
                   <!-- Disabled, https://issues.apache.org/jira/browse/MENFORCER-189 -->
-                  <!--
-                  <reactorModuleConvergence />
-                  -->
+                  <!-- <reactorModuleConvergence /> -->
                   <bannedDependencies>
                     <excludes>
                       <exclude>log4j</exclude>
@@ -121,44 +120,6 @@
           <artifactId>exec-maven-plugin</artifactId>
           <version>1.5.0</version>
         </plugin>
-        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
-        <plugin>
-          <groupId>org.eclipse.m2e</groupId>
-          <artifactId>lifecycle-mapping</artifactId>
-          <version>1.0.0</version>
-          <configuration>
-            <lifecycleMappingMetadata>
-              <pluginExecutions>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>license-maven-plugin</artifactId>
-                    <versionRange>[1.6,)</versionRange>
-                    <goals>
-                      <goal>update-project-license</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore/>
-                  </action>
-                </pluginExecution>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <versionRange>[2.8,)</versionRange>
-                    <goals>
-                      <goal>copy</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore/>
-                  </action>
-                </pluginExecution>
-              </pluginExecutions>
-            </lifecycleMappingMetadata>
-          </configuration>
-        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -169,7 +130,6 @@
           <verbose>false</verbose>
           <addSvnKeyWords>true</addSvnKeyWords>
           <licenseName>gpl_v3</licenseName>
-	  <organizationName>Beispiel-Universit?t</organizationName>  
         </configuration>
         <executions>
           <execution>
@@ -207,7 +167,7 @@
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </pluginRepository>
   </pluginRepositories>
-   <profiles>
+  <profiles>
     <profile>
       <id>release-profile</id>
       <properties>
@@ -226,27 +186,6 @@
         <groupId>${project.groupId}</groupId>
         <artifactId>profkat_sample-module</artifactId>
         <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.yahoo.platform.yui</groupId>
-        <artifactId>yuicompressor</artifactId>
-        <version>2.4.8</version>
-      </dependency>
-      <dependency>
-        <groupId>de.erichseifert.vectorgraphics2d</groupId>
-        <artifactId>VectorGraphics2D</artifactId>
-        <version>0.11</version>
-      </dependency>
-      <dependency>
-        <groupId>io.bit3</groupId>
-        <artifactId>jsass</artifactId>
-        <version>4.1.0</version>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
-      <dependency>
-        <groupId>com.mchange</groupId>
-        <artifactId>c3p0</artifactId>
-        <version>0.9.5.4</version>
       </dependency>
       <dependency>
         <groupId>org.mycore</groupId>
@@ -290,7 +229,7 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-  
+
   <modules>
     <module>profkat_sample-module</module>
     <module>profkat_sample-webapp</module>
