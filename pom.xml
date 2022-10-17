@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.mycore</groupId>
     <artifactId>mycore-application-starter</artifactId>
-    <version>2021.06.1-SNAPSHOT</version>
+    <version>2021.06.2-SNAPSHOT</version>
   </parent>
   <groupId>org.mycore.profkat.sample</groupId>
   <artifactId>profkat_sample</artifactId>
@@ -19,7 +19,7 @@
     <!-- until snapshot matches released version (required for 'mvn changes:changes-check') -->
     <hibernate.version>5.2.14.Final</hibernate.version>
     <java.target.version>11</java.target.version>
-    <mycore.version>2021.06.1-SNAPSHOT</mycore.version>
+    <mycore.version>2021.06.2-SNAPSHOT</mycore.version>
   </properties>
   <!-- put your Git or SVN URLs here -->
   <scm>

@@ -15,7 +15,7 @@
 		<os family="unix" />
 	</condition>
 
-	<condition property="DATA_DIR" value="/data/mycore/rosdok" else="d:\mycore-dev-data\rosdok">
+	<condition property="DATA_DIR" value="/data/mycore/profkat_sample" else="e:\WORK\mycore-dev-data\profkat_sample">
 		<os family="unix" />
 	</condition>
 
@@ -92,14 +92,6 @@
 			<sysproperty key="MCR.AppName" value="${APP_NAME}" />
 			<arg value="reload solr configuration main in core main" />
 		</java>
-	</target>
-
-	<target name="update.webcontent">
-		<delete dir="${DATA_DIR}/webcontent" failonerror="false" />
-		<mkdir dir="${DATA_DIR}/webcontent" />
-		<copy todir="${DATA_DIR}/webcontent" overwrite="true">
-			<fileset dir="${CONFIG_DIR}/webcontent" />
-		</copy>
 	</target>
 
 	<target name="create.configuration.directory">
