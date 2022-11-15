@@ -3,7 +3,7 @@
 <!-- MyCoRe sample application build file for use with Apache Ant        -->
 <!-- $Revision$ $Date$                      							 -->
 <!-- =================================================================== -->
-<project name="RosDok build" basedir=".">
+<project name="Profkat build" basedir=".">
 	<property name="APP_NAME" value="profkat_sample" />
 	<property environment="env" />
 
@@ -78,6 +78,13 @@
 		           update all classifications from directory ${CONFIG_DIR}/classification
 			</mcr-execute>
 		-->
+	</target>
+	
+	<target name="update.database.config" >
+		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
+			<sysproperty key="MCR.AppName" value="${APP_NAME}"/>
+			<arg value="reload mappings in jpa configuration file" />
+		</java>
 	</target>
 
 	<target name="deploy.workflows">
