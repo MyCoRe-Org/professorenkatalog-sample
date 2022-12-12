@@ -18,6 +18,11 @@
     <finalName>profkat_sample-${project.version}</finalName>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.2</version>
+      </plugin>
+      <plugin>
         <!-- https://maven.apache.org/plugins/maven-dependency-plugin/examples/unpacking-artifacts.html -->
         <!-- extracts the scss files from bootstrap, that they are available for the dart-sass-maven-plugin -->
         <groupId>org.apache.maven.plugins</groupId>

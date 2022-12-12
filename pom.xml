@@ -2,26 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.mycore</groupId>
-    <artifactId>mycore-application-starter</artifactId>
-    <version>2021.06.1-SNAPSHOT</version>
-  </parent>
   <groupId>org.mycore.profkat.sample</groupId>
   <artifactId>profkat_sample</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Beispiel-Professorenkatalog</name>
   <description>The main Maven project for Beispiel-Professorenkatalog</description>
+  <organization>
+    <name>MyCoRe Community</name>
+    <url>https://www.mycore.de</url>
+  </organization>
   <inceptionYear>2019</inceptionYear>
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <changelog.since>2019-11-07</changelog.since>
-    <!-- until snapshot matches released version (required for 'mvn changes:changes-check') -->
+		<!-- until snapshot matches released version (required for 'mvn changes:changes-check') -->
     <hibernate.version>5.2.14.Final</hibernate.version>
-    <java.target.version>11</java.target.version>
-    <mycore.version>2021.06.1-SNAPSHOT</mycore.version>
+    <maven.compiler.release>17</maven.compiler.release>
+    <mycore.version>2022.06.1-SNAPSHOT</mycore.version>
   </properties>
-  <!-- put your Git or SVN URLs here -->
+	<!-- put your Git or SVN URLs here -->
   <scm>
     <connection>scm:git:http://***</connection>
     <developerConnection>scm:git:https://***</developerConnection>
@@ -74,6 +74,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-dependency-plugin</artifactId>
+          <version>3.4.0</version>
           <executions>
             <execution>
               <id>analyze</id>
@@ -108,7 +109,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>license-maven-plugin</artifactId>
-          <version>1.10</version>
+          <version>2.0.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -178,9 +179,16 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>org.mycore.jspdocportal</groupId>
+        <artifactId>jspdocportal-bom</artifactId>
+        <version>2022.06-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>org.mycore.professorenkatalog</groupId>
         <artifactId>profkat-base-module</artifactId>
-        <version>2021.06-SNAPSHOT</version>
+        <version>2022.06-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>${project.groupId}</groupId>
@@ -229,7 +237,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
   <modules>
     <module>profkat_sample-module</module>
     <module>profkat_sample-webapp</module>
