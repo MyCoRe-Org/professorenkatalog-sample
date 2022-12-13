@@ -38,7 +38,7 @@ mvn clean install
 Configuration
 -------------
 - Konfigurationsverzeichnis erstellen
-  - ant create.configuration.directory
+  > ant create.configuration.directory
 - Datenbank installieren (H2 im Testbetrieb)
   - Version 1.4.199 verwenden (letzte aktuell mit MyCoRe funktionierende Version)
   - JAR-Datei herunterladen
@@ -69,13 +69,14 @@ Configuration
  - Datenbank konfigurieren (PostgreSQL in Produktion)
    - resources\META-INF\persistence.xml
        <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://127.0.0.1/mycoredb?currentSchema=cpr" />
+       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://127.0.0.1/mycoredb?currentSchema=profkat_sample" />
        <property name="javax.persistence.jdbc.user" value="mcradmin" />
        <property name="javax.persistence.jdbc.password" value="***" />
+   - C3P0 Connection Pooling aktivieren
    - camunda.cfg.xml
-      <property name="jdbcUrl" value="jdbc:postgresql://127.0.0.1/mycoredb?currentSchema=cpr_bpm" />
-      <property name="databaseSchema" value="cpr_bpm" />
-      <property name="databaseTablePrefix" value="cpr_bpm." />
+      <property name="jdbcUrl" value="jdbc:postgresql://127.0.0.1/mycoredb?currentSchema=profkat_sample_bpm" />
+      <property name="databaseSchema" value="profkat_sample_bpm" />
+      <property name="databaseTablePrefix" value="profkat_sample_bpm." />
       <property name="jdbcDriver" value="org.postgresql.Driver" />
       <property name="jdbcUsername" value="mcradmin" />
       <property name="jdbcPassword" value="***" />
@@ -86,29 +87,31 @@ Configuration
   - SOLR installieren und konfigurieren
     - https://www.mycore.de/documentation/getting_started/gs_solr8/
     https://www.mycore.de/documentation/search/search_solr_use/
-    C:\SOLR\solr-8.11.1\bin> .\solr create -c cpr_main -d mycore_main
-    C:\SOLR\solr-8.11.1\bin> .\solr create -c cpr_classification -d mycore_classification
+    C:\SOLR\solr-8.11.1\bin> .\solr create -c profkat_sample_main -d mycore_main
+    C:\SOLR\solr-8.11.1\bin> .\solr create -c profkat_sample_classification -d mycore_classification
 
   - Konfiguration (mycore.properties) anpassen
   
     MCR.Solr.ServerURL=http://localhost:8983/
-    MCR.Solr.Core.main.Name=cpr_main
+    MCR.Solr.Core.main.Name=profkat_sample_main
     MCR.Solr.Core.main.ServerURL=%MCR.Solr.ServerURL%
-    MCR.Solr.Core.classification.Name=cpr_classification
+    MCR.Solr.Core.classification.Name=profkat_sample_classification
     MCR.Solr.Core.classification.ServerURL=%MCR.Solr.ServerURL%
     
-    MCR.baseurl=http://localhost:8080/cpr/
+    MCR.baseurl=http://localhost:8080/profkat_sample/
     #MCR.datadir=/opt/mycore/data/myapp
-    MCR.datadir=e:\\WORK\\mycore-dev-data\\cpr_2022
+    MCR.datadir=C:\\WORK\\mycore-data\\profkat_sample
   
   - SOLR einrichten
     - > ant update.solr.config
     
   - Nutzer erstellen und laden
-    - XML-Dateien bearbeiten + ggf. Build-Skript anpassen
-    - > ant create.users
+   - Verzeichnis: `profkat_sample-cli\src\main\config\user`
+   - XML-Dateien bearbeiten + ggf. Build-Skript anpassen
+   - > ant create.users
   
   - Klassifikationen erstellen und laden
+    - Verzeichnis: `profkat_sample-cli\src\main\config\classification`
     - XML-Dateien bearbeiten + ggf. Build-Skript anpassen
     - > ant create.class
     
