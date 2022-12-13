@@ -7,6 +7,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Beispiel-Professorenkatalog</name>
+  <organization>
+    <name>Beispiel-Organisation</name>
+    <url>http://sample.org</url>
+  </organization>
   <description>The main Maven project for Beispiel-Professorenkatalog</description>
   <organization>
     <name>MyCoRe Community</name>
@@ -14,12 +18,16 @@
   </organization>
   <inceptionYear>2019</inceptionYear>
   <properties>
+<<<<<<< HEAD
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <changelog.since>2019-11-07</changelog.since>
 		<!-- until snapshot matches released version (required for 'mvn changes:changes-check') -->
     <hibernate.version>5.2.14.Final</hibernate.version>
     <maven.compiler.release>17</maven.compiler.release>
     <mycore.version>2022.06.1-SNAPSHOT</mycore.version>
+=======
+    <java.target.version>17</java.target.version>
+>>>>>>> branch 'main' of https://github.com/MyCoRe-Org/professorenkatalog-sample.git
   </properties>
 	<!-- put your Git or SVN URLs here -->
   <scm>
@@ -117,6 +125,11 @@
           <version>3.0.0</version>
         </plugin>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.3.2</version>
+        </plugin>
+        <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
           <version>1.5.0</version>
@@ -194,13 +207,6 @@
         <groupId>${project.groupId}</groupId>
         <artifactId>profkat_sample-module</artifactId>
         <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.mycore</groupId>
-        <artifactId>mycore</artifactId>
-        <version>${mycore.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.h2database</groupId>

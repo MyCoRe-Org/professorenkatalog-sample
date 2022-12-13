@@ -3,7 +3,7 @@
 <!-- MyCoRe sample application build file for use with Apache Ant        -->
 <!-- $Revision$ $Date$                      							 -->
 <!-- =================================================================== -->
-<project name="RosDok build" basedir=".">
+<project name="Profkat build" basedir=".">
 	<property name="APP_NAME" value="profkat_sample" />
 	<property environment="env" />
 
@@ -15,7 +15,7 @@
 		<os family="unix" />
 	</condition>
 
-	<condition property="DATA_DIR" value="/data/mycore/rosdok" else="d:\mycore-dev-data\rosdok">
+	<condition property="DATA_DIR" value="/data/mycore/profkat_sample" else="e:\WORK\mycore-dev-data\profkat_sample">
 		<os family="unix" />
 	</condition>
 
@@ -79,6 +79,13 @@
 			</mcr-execute>
 		-->
 	</target>
+	
+	<target name="update.database.config" >
+		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
+			<sysproperty key="MCR.AppName" value="${APP_NAME}"/>
+			<arg value="reload mappings in jpa configuration file" />
+		</java>
+	</target>
 
 	<target name="deploy.workflows">
 		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
@@ -92,14 +99,6 @@
 			<sysproperty key="MCR.AppName" value="${APP_NAME}" />
 			<arg value="reload solr configuration main in core main" />
 		</java>
-	</target>
-
-	<target name="update.webcontent">
-		<delete dir="${DATA_DIR}/webcontent" failonerror="false" />
-		<mkdir dir="${DATA_DIR}/webcontent" />
-		<copy todir="${DATA_DIR}/webcontent" overwrite="true">
-			<fileset dir="${CONFIG_DIR}/webcontent" />
-		</copy>
 	</target>
 
 	<target name="create.configuration.directory">
