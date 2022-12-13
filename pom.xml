@@ -7,27 +7,14 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Beispiel-Professorenkatalog</name>
+  <description>The main Maven project for Beispiel-Professorenkatalog</description>
   <organization>
     <name>Beispiel-Organisation</name>
     <url>http://sample.org</url>
   </organization>
-  <description>The main Maven project for Beispiel-Professorenkatalog</description>
-  <organization>
-    <name>MyCoRe Community</name>
-    <url>https://www.mycore.de</url>
-  </organization>
   <inceptionYear>2019</inceptionYear>
   <properties>
-<<<<<<< HEAD
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <changelog.since>2019-11-07</changelog.since>
-		<!-- until snapshot matches released version (required for 'mvn changes:changes-check') -->
-    <hibernate.version>5.2.14.Final</hibernate.version>
-    <maven.compiler.release>17</maven.compiler.release>
-    <mycore.version>2022.06.1-SNAPSHOT</mycore.version>
-=======
     <java.target.version>17</java.target.version>
->>>>>>> branch 'main' of https://github.com/MyCoRe-Org/professorenkatalog-sample.git
   </properties>
 	<!-- put your Git or SVN URLs here -->
   <scm>
