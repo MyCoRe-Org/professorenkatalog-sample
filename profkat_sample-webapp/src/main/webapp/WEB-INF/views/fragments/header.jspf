@@ -10,6 +10,11 @@
         <mcr:outputNavigation id="top" mode="top" cssClass="nav navbar-nav pull-right">
           <mcr:session var="username" info="userID" />
           <c:if test="${not (username eq 'guest')}">
+            <li class="nav-item userinfo">
+              <a href="${WebApplicationBaseURL}do/workspace/tasks" class="nav-link"> 
+                <fmt:message key="WF.workspace" /> 
+              </a>
+            </li>
             <li id="topnav_login" class="nav-item userinfo">
               <a href="${WebApplicationBaseURL}do/login" class="nav-link"> 
                 <fmt:message key="Webpage.login.User" />:&#160; 
