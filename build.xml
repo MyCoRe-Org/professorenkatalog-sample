@@ -97,7 +97,8 @@
 	<target name="update.solr.config">
 		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
 			<sysproperty key="MCR.AppName" value="${APP_NAME}" />
-			<arg value="reload solr configuration main in core main" />
+			<arg value="reload solr configuration main in core main
+			;; reload solr configuration classification in core classification" />
 		</java>
 	</target>
 
