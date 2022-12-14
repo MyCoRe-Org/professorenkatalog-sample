@@ -67,13 +67,13 @@ Configuration
      <property name="jdbcUrl" value="jdbc:h2:file:c:/Users/mcradmin/AppData/Local/MyCoRe/profkat_sample/data/h2/bpm" />
   
  - Datenbank konfigurieren (PostgreSQL in Produktion)
-   - resources\META-INF\persistence.xml
+   - $MYCORE_HOME\resources\META-INF\persistence.xml
        <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
        <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://127.0.0.1/mycoredb?currentSchema=profkat_sample" />
        <property name="javax.persistence.jdbc.user" value="mcradmin" />
        <property name="javax.persistence.jdbc.password" value="***" />
    - C3P0 Connection Pooling aktivieren
-   - camunda.cfg.xml
+   - $MYCORE_HOME\resources\camunda.cfg.xml
       <property name="jdbcUrl" value="jdbc:postgresql://127.0.0.1/mycoredb?currentSchema=profkat_sample_bpm" />
       <property name="databaseSchema" value="profkat_sample_bpm" />
       <property name="databaseTablePrefix" value="profkat_sample_bpm." />
