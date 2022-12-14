@@ -12,7 +12,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ProfKatBeaconTxtServlet</servlet-name>
-		<url-pattern>/cpr_pnd_beacon.txt</url-pattern>
+		<url-pattern>/beacon.txt</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>
