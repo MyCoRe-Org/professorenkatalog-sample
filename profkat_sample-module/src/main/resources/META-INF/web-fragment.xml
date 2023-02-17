@@ -3,10 +3,11 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-fragment_5_0.xsd"
   metadata-complete="true">
-  <name>profkat_sample_module</name>
+
+  <name>profkat_sample</name>
   <ordering>
     <after>
-      <name>profkat_base_module</name>
+      <name>profkat_base</name>
     </after>
   </ordering>
 </web-fragment>
