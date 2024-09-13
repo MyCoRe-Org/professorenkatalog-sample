@@ -70,5 +70,10 @@
       <artifactId>postgresql</artifactId>
       <scope>runtime</scope>
     </dependency>
+     <dependency>
+      <groupId>org.hibernate.orm</groupId>
+      <artifactId>hibernate-hikaricp</artifactId>
+      <scope>runtime</scope>
+    </dependency>
   </dependencies>
 </project>
