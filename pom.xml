@@ -14,7 +14,7 @@
   </organization>
   <inceptionYear>2019</inceptionYear>
   <properties>
-    <java.target.version>17</java.target.version>
+    <java.target.version>21</java.target.version>
   </properties>
 	<!-- put your Git or SVN URLs here -->
   <scm>
@@ -181,14 +181,14 @@
       <dependency>
         <groupId>org.mycore.jspdocportal</groupId>
         <artifactId>jspdocportal-bom</artifactId>
-        <version>2022.06-SNAPSHOT</version>
+        <version>2024.06-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.mycore.professorenkatalog</groupId>
         <artifactId>profkat-base-module</artifactId>
-        <version>2022.06-SNAPSHOT</version>
+        <version>2024.06-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>${project.groupId}</groupId>
