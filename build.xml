@@ -15,7 +15,11 @@
 		<os family="unix" />
 	</condition>
 
-	<condition property="DATA_DIR" value="/data/mycore/profkat_sample" else="e:\WORK\mycore-dev-data\profkat_sample">
+	<condition property="DATA_DIR" value="/data/mycore/${APP_NAME}" else="c:\Users\mcradmin\AppData\Local\MyCoRe\${APP_NAME}\data">
+		<os family="unix" />
+	</condition>
+
+	<condition property="SOLR_SERVER_DIR" value="/opt/solr/solr-9.7.0/server/solr" else="c:\SOLR\solr-9.7.0\server\solr">
 		<os family="unix" />
 	</condition>
 
@@ -79,7 +83,7 @@
 			</mcr-execute>
 		-->
 	</target>
-	
+
 	<target name="update.database.config" >
 		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
 			<sysproperty key="MCR.AppName" value="${APP_NAME}"/>
@@ -92,6 +96,19 @@
 			<sysproperty key="MCR.AppName" value="${APP_NAME}" />
 			<arg value="deploy workflow processdefinition from resource config/workflow/processdefinitions/create_object_simple.bpmn20.xml" />
 		</java>
+	</target>
+
+	<target name="export.solr.configsets">
+		<mkdir dir="${DATA_DIR}/solr_configsets" />
+		<java fork="true" dir="${CLI_HOME}/lib" classpathref="CLI_CLASSPATH" classname="org.mycore.frontend.cli.MCRCommandLineInterface">
+			<sysproperty key="MCR.AppName" value="${APP_NAME}" />
+			<arg value="export solr configset mycore_main to folder ${DATA_DIR}/solr_configsets
+				         ;; export solr configset mycore_classification to folder ${DATA_DIR}/solr_configsets" />
+		</java>
+		<mkdir dir="${SOLR_CONFIGSET_DIR}/mycore_main/conf" />
+		<mkdir dir="${SOLR_CONFIGSET_DIR}/mycore_classification/conf" />
+		<unzip src="${DATA_DIR}/solr_configsets/mycore_main.zip" dest="${SOLR_CONFIGSET_DIR}/mycore_main/conf" />
+		<unzip src="${DATA_DIR}/solr_configsets/mycore_classification.zip" dest="${SOLR_CONFIGSET_DIR}/mycore_classification/conf" />
 	</target>
 
 	<target name="update.solr.config">
