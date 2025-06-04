@@ -14,7 +14,7 @@
   </organization>
   <inceptionYear>2019</inceptionYear>
   <properties>
-    <java.target.version>21</java.target.version>
+    <maven.compiler.release>21</maven.compiler.release>
   </properties>
 	<!-- put your Git or SVN URLs here -->
   <scm>
