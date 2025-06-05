@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="MCRClassification.xsd"
+	ID="profkat_class_departures"> 
+	<label xml:lang="de" text="Art des Ausscheidens"
+		description="zur Erfassung verschiedener Arten des Ausscheidens" />
+	<categories>
+		<category ID="none">
+    		<label xml:lang="de" text="nicht zugewiesen" />
+            <label xml:lang="en" text="not applicable" />
+    	</category>
+		<category ID="emerited">
+			<label xml:lang="de" text="emeritiert" />
+            <label xml:lang="en" text="emerited" />
+		</category>
+	</categories>
+</mycoreclass>
